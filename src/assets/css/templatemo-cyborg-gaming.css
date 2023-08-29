@@ -487,7 +487,7 @@ Header Style
 
 .header-area .main-nav .logo {
   border-right: 1px solid #27292a;
-  flex-basis: 20%;
+  flex-basis: 10%;
   margin-right: 5%;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -498,7 +498,6 @@ Header Style
 
 .header-area .main-nav .logo img {
   width: 191px;
-  padding-right: 0%;
 }
 
 .background-header .main-nav .logo {
@@ -515,14 +514,16 @@ Header Style
   justify-content: flex-end;
   vertical-align: middle;
   text-align: right;
-  margin-top: 0px;
-  margin-right: 0px;
+  margin-top: 15px;
+  margin-left: 100px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   position: relative;
   z-index: 999;
+  max-height: 100px;
+  height: 40px;
 }
 
 .header-area .main-nav .nav li {
@@ -574,6 +575,11 @@ Header Style
   color: #fff !important;
   background-color: #e75e8d !important;
 } */
+
+.header-area .main-nav .nav li:hover a,
+.header-area .main-nav .nav li a.active {
+  color: #fff !important;
+}
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
@@ -705,9 +711,9 @@ Header Style
   min-height: 70px;
 }
 
-.header-area.header-sticky .nav li a.active {
-  color: #fff;
-}
+/* .header-area.header-sticky .nav li a.active {
+  background-color: rgba(0, 0, 0, 0.0);
+} */
 
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
@@ -766,7 +772,7 @@ Header Style
   }
 
   .header-area {
-    background-color: #f7f7f7;
+    background-color: transparent !important;
     padding: 0px 15px;
     height: 80px;
     box-shadow: none;
@@ -1895,7 +1901,6 @@ My Customization
   color: #1e1e1e;
   font-size: 14px;
   padding: 0px 15px 0px 20px;
-  /* text-align: center; */
   border-color: #A76F1C;
 
 }
@@ -1930,9 +1935,13 @@ My Customization
 
 .lgn-inputs .item-text {
   padding: 10px 10px;
-  /* width: 100%; */
+  width: 55%;
   z-index: 5;
   border-style: groove;
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
 }
 
 .lgn-inputs .item-button {
@@ -1947,8 +1956,9 @@ My Customization
   width: 100%;
 }
 
+
 .lgn-inputs .item-button .col-lg-12 .main-button a {
-  width: 80%;
+  width: 50%;
   background-color: #F0B12F;
   border: solid;
   border-style: groove;
@@ -1964,7 +1974,7 @@ My Customization
     /* Container'ın genişliğini tam ekran olacak şekilde ayarla */
     padding: 15px;
     /* Daha az padding ver */
-    width: 70%;
+    width: 90%;
   }
 
   .main-profile .lgn-container {
