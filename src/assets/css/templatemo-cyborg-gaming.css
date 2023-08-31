@@ -505,7 +505,7 @@ Header Style
 }
 
 .background-header .main-nav .logo img {
-  width: 180px;
+  width: 150px;
 }
 
 .header-area .main-nav .nav {
@@ -683,22 +683,246 @@ Header Style
   min-height: 70px;
 }
 
-/* .header-area.header-sticky .nav li a.active {
-  background-color: rgba(0, 0, 0, 0.0);
-} */
-
-@media (max-width: 1200px) {
-  .header-area .main-nav .nav li {
-    padding-left: 10px;
-    padding-right: 10px;
+@media screen and (max-width: 1100px) and (min-width: 955px) and (orientation: landscape) {
+  .header-area {
+    top: 0;
   }
 
-  .header-area .main-nav:before {
+  .header-area .main-nav {
+    background-color: transparent;
+    border-radius: 0px;
+  }
+
+  .header-area .main-nav .nav {
+    height: auto;
+    flex-basis: 100%;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -30%;
+    margin-bottom: 10%;
+  }
+
+  .background-header .main-nav .border-button {
+    top: 0px !important;
+  }
+
+  .header-area .main-nav .border-button {
+    position: absolute;
+    top: 15px;
+    right: 70px;
+  }
+
+  .header-area.header-sticky .nav li a:hover,
+  .header-area.header-sticky .nav li a.active {
+    color: #e75e8d !important;
+    opacity: 1;
+  }
+
+  .header-area.header-sticky .nav li.search-icon a {
+    width: 100%;
+  }
+
+  .header-area {
+    background-color: transparent !important;
+    padding: 0px 15px;
+    height: 80px;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .header-area .container {
+    padding: 0px;
+  }
+
+  .header-area .logo {
+    margin-left: 0px;
+  }
+
+  .header-area .menu-trigger {
+    display: block !important;
+  }
+
+  .header-area .main-nav {
+    overflow: hidden;
+  }
+
+  .header-area .main-nav .nav {
+    float: none;
+    width: 100%;
     display: none;
+    -webkit-transition: all 0s ease 0s;
+    -moz-transition: all 0s ease 0s;
+    -o-transition: all 0s ease 0s;
+    transition: all 0s ease 0s;
+    margin-left: 0px;
+  }
+
+  .header-area.header-sticky .nav {
+    margin-top: 65px !important;
+    text-align: center;
+  }
+
+  .background-header.header-sticky .nav {
+    margin-top: 70px !important;
+  }
+
+  .header-area .main-nav .nav li:first-child {
+    border-top: 1px solid #eee;
+  }
+
+  .header-area .main-nav .nav li {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .header-area .main-nav .nav li a {
+    height: 50px !important;
+    line-height: 50px !important;
+    padding: 0px !important;
+    border: none !important;
+    background: #fff !important;
+    color: #1e1e1e !important;
+  }
+
+  .header-area .main-nav .nav li a:hover {
+    background: #fff !important;
+    color: #e75e8d !important;
+  }
+
+  .header-area .main-nav .nav li:last-child a img {
+    display: none;
+  }
+
+  .header-area .main-nav .nav li:last-child a:hover {
+    color: #ec6090 !important;
+    background-color: transparent !important;
+  }
+
+  .header-area .main-nav .nav li.has-sub ul.sub-menu {
+    position: relative;
+    visibility: inherit;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    top: 0px;
+    width: 100%;
+    box-shadow: none;
+    height: 0px;
+    transition: all 0s;
+  }
+
+  .header-area .main-nav .nav li.submenu ul li a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .header-area .main-nav .nav li.submenu ul li a:hover:before {
+    width: 0px;
+  }
+
+  .header-area .main-nav .nav li.has-sub ul.sub-menu {
+    height: auto;
+  }
+
+  .header-area .main-nav .nav li.has-sub:after {
+    color: #3b566e;
+    right: 30px;
+    font-size: 14px;
+    top: 15px;
+  }
+
+  .header-area .main-nav .nav li.submenu:hover ul,
+  .header-area .main-nav .nav li.submenu:focus ul {
+    height: 0px;
+  }
+
+  body {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .header-area .main-nav {
+    width: 90%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    /* border-right: 1px solid #27292a; */
+    /* flex-basis: 1%; */
+    /* margin-right: 10%; */
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -90%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .main-profile .lgn-container {
+    width: 100%;
+    margin: 20px 20px;
+  }
+
+  .lgn-inputs {
+    text-align: center;
+    margin: 10%;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 80% !important;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-text input {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
   }
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 950px) {
   .header-area {
     top: 0;
   }
@@ -1034,6 +1258,11 @@ Gaming Library Style
 Footer Style
 --------------------------------------------- 
 */
+
+footer {
+  padding-top: 15px;
+  margin-top: 20px;
+}
 
 footer p {
   text-align: center;
@@ -1855,9 +2084,9 @@ body {
 }
 
 /* 
----------------------------------------------
+----------------------------------------------------------------------------------------------------------
 My Customization
---------------------------------------------- 
+----------------------------------------------------------------------------------------------------------
 */
 
 .lgn-inputs {
@@ -1891,7 +2120,6 @@ My Customization
 .main-login {
   border-radius: 23px;
   padding: 30px;
-  /* background-color: #1f2122; */
   max-width: 70%;
   width: 50%;
   z-index: 5;
@@ -1928,7 +2156,6 @@ My Customization
   width: 100%;
 }
 
-
 .lgn-inputs .item-button .col-lg-12 .main-button a {
   width: 50%;
   background-color: #F0B12F;
@@ -1940,13 +2167,268 @@ My Customization
 }
 
 /* Mobil görünüm için media query */
-@media screen and (max-width: 576px) {
-  .main-login {
-    max-width: 100%;
-    /* Container'ın genişliğini tam ekran olacak şekilde ayarla */
-    padding: 15px;
-    /* Daha az padding ver */
+@media screen and (max-width: 576px) and (orientation: portrait) {
+  body {
+    background-size: auto auto;
+    /* Genişliği sabit bırak, yüksekliği 100% olarak ayarla */
+    background-position: center;
+    /* Görüntüyü yatayda ortala */
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .header-area .main-nav {
     width: 90%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 100px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .main-profile .lgn-container {
+    width: 100%;
+    margin: 20px 20px;
+  }
+
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 80% !important;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 576px) and (orientation: landscape) {
+  body {
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .header-area .main-nav {
+    width: 90%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    /* border-right: 1px solid #27292a; */
+    /* flex-basis: 1%; */
+    /* margin-right: 10%; */
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 100px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .main-profile .lgn-container {
+    width: 100%;
+    margin: 20px 20px;
+  }
+
+  .lgn-inputs {
+    text-align: center;
+    margin: 10%;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 60%;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 650px) and (orientation: portrait) {
+  body {
+    background-size: auto auto;
+    /* Genişliği sabit bırak, yüksekliği 100% olarak ayarla */
+    background-position: center;
+    /* Görüntüyü yatayda ortala */
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  footer {
+    padding-top: 0px !important;
+    margin-top: -60px !important;
+  }
+
+  .header-area .main-nav {
+    width: 80%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .main-login .lgn-container {
+    margin: 20px 20px;
+  }
+
+
+  .lgn-inputs {
+    text-align: center;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 55%;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+    margin-bottom: 25%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 650px) and (orientation: landscape) {
+  body {
+    background-size: auto 100%;
+    /* Genişliği sabit bırak, yüksekliği 100% olarak ayarla */
+    background-position: center;
+    /* Görüntüyü yatayda ortala */
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  footer {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  .header-area .main-nav {
+    width: 80%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+    margin-top: 10%;
   }
 
   .main-profile .lgn-container {
@@ -1954,6 +2436,261 @@ My Customization
     /* Container'ın genişliğini tam ekran olacak şekilde ayarla */
     margin: 20px 20px;
     /* Daha az boşluk ver */
+  }
+
+  .lgn-inputs {
+    text-align: center;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 50%;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 850px) and (min-width: 810px) and (orientation: portrait) {
+  body {
+    background-size: auto auto;
+    /* Genişliği sabit bırak, yüksekliği 100% olarak ayarla */
+    background-position: center;
+    /* Görüntüyü yatayda ortala */
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  footer {
+    padding-top: 0px !important;
+    margin-top: -40px !important;
+  }
+
+  .header-area .main-nav {
+    width: 80%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .main-login .lgn-container {
+    margin: 20px 20px;
+  }
+
+
+  .lgn-inputs {
+    text-align: center;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 55%;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+    margin-bottom: 25%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 850px) and (min-width: 810px) and (orientation: landscape) {
+  body {
+    background-size: auto 100%;
+    /* Genişliği sabit bırak, yüksekliği 100% olarak ayarla */
+    background-position: center;
+    /* Görüntüyü yatayda ortala */
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  footer {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  .header-area .main-nav {
+    width: 80%;
+    display: contents;
+    position: fixed;
+  }
+
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 150px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .main-login {
+    border-radius: 23px;
+    max-width: 100%;
+    width: 100%;
+    z-index: 5;
+    margin-top: 10%;
+  }
+
+  .main-profile .lgn-container {
+    width: 100%;
+    /* Container'ın genişliğini tam ekran olacak şekilde ayarla */
+    margin: 20px 20px;
+    /* Daha az boşluk ver */
+  }
+
+  .lgn-inputs {
+    text-align: center;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 50%;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button {
+    padding-top: 5%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 {
+    width: 100%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 180px;
+    margin-left: -50%;
+    margin-bottom: 10%;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 80% !important;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 1045px) and (min-width: 1000px) {
+  .header-area .main-nav .logo {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header-area .main-nav .logo img {
+    width: 160px;
+    /* margin-left: -50%; */
+    margin-right: -5%;
+    margin-bottom: 10%;
+  }
+
+  .lgn-inputs .item-text {
+    padding: 10px 10px;
+    width: 80% !important;
+    z-index: 5;
+    border-style: groove;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button a {
+    width: 70% !important;
   }
 }
 
