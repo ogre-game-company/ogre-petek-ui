@@ -6,7 +6,7 @@ document.getElementById("language").addEventListener("change", function () {
         var inputs = document.querySelectorAll('input');
 
         for (let index = 0; index < inputs.length; index++) {
-            if (inputs[index].type == "text") {
+            if (inputs[index].type == "text" || inputs[index].type == "password") {
 
                 var elementName = inputs[index].name
 
@@ -26,7 +26,16 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("registration-number").placeholder = "Kayıt Numarası";
                     } else if (elementName == "branch") {
                         document.getElementById("branch").placeholder = "Şube";
+                    } else if (elementName == "idNumber") {
+                        document.getElementById("id-number").placeholder = "ID";
+                    } else if (elementName == "password") {
+                        document.getElementById("password").placeholder = "Şifre";
                     }
+
+                    if (document.getElementsByClassName("showPasswordLabel").length > 0) {
+                        document.getElementById("showPasswordLabel").innerText = "Şifreyi göster";
+                    }
+
                     document.getElementsByClassName("item-button")[0].getElementsByTagName('a')[0].innerText = "Giriş Yap"
 
                 } else if (selectedLanguage === "en") {
@@ -45,10 +54,18 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("registration-number").placeholder = "Registration Number";
                     } else if (elementName == "branch") {
                         document.getElementById("branch").placeholder = "Branch";
+                    } else if (elementName == "idNumber") {
+                        document.getElementById("id-number").placeholder = "ID";
+                    } else if (elementName == "password") {
+                        document.getElementById("password").placeholder = "Password";
                     }
+
+                    if (document.getElementsByClassName("showPasswordLabel").length > 0) {
+                        document.getElementById("showPasswordLabel").innerText = "Show Password";
+                    }
+
                     document.getElementsByClassName("item-button")[0].getElementsByTagName('a')[0].innerText = "Log in"
                 }
-
 
             }
         }
