@@ -203,7 +203,7 @@
         width: 100% !important;
     }
 
-    .lgn-inputs .item-button .col-lg-12 .main-button a {
+    .lgn-inputs .item-button .col-lg-12 .main-button input {
         width: 70% !important;
         background-color: #F0B12F;
         border: solid;
@@ -240,7 +240,7 @@
     }
 
 
-    .lgn-inputs .item-button .col-lg-12 .main-button a {
+    .lgn-inputs .item-button .col-lg-12 .main-button input {
         width: 70% !important;
         background-color: #F0B12F;
         border: solid;
@@ -330,7 +330,7 @@
         height: 10%;
     }
 
-    .lgn-inputs .item-button .col-lg-12 .main-button a {
+    .lgn-inputs .item-button .col-lg-12 .main-button input {
         width: 70% !important;
         background-color: #F0B12F;
         border: solid;
@@ -458,7 +458,7 @@
         height: 10%;
     }
 
-    .lgn-inputs .item-button .col-lg-12 .main-button a {
+    .lgn-inputs .item-button .col-lg-12 .main-button input {
         width: 40vh !important;
         background-color: #F0B12F;
         border: solid;

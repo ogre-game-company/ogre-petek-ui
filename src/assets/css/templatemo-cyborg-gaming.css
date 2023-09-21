@@ -1710,7 +1710,7 @@ body {
     width: 65%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 60% !important;
   }
 }
@@ -1883,7 +1883,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 80% !important;
   }
 }
@@ -2235,7 +2235,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 80% !important;
   }
 }
@@ -2474,7 +2474,7 @@ body {
     width: 70%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 60% !important;
   }
 }
@@ -2555,7 +2555,7 @@ body {
     margin-bottom: 10%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 40%;
   }
 }
@@ -2720,7 +2720,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 90% !important;
   }
 }
@@ -2908,7 +2908,7 @@ body {
     width: 70%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 50% !important;
   }
 }
@@ -2938,7 +2938,7 @@ body {
     align-items: center;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 60% !important;
   }
 }
@@ -2968,7 +2968,7 @@ body {
     align-items: center;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 70% !important;
   }
 }
@@ -3122,7 +3122,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 80% !important;
   }
 }
@@ -3297,7 +3297,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 60% !important;
   }
 }
@@ -3475,7 +3475,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 100% !important;
   }
 }
@@ -3653,7 +3653,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 50% !important;
   }
 }
@@ -3830,7 +3830,7 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 50% !important;
   }
 }
@@ -4006,10 +4006,36 @@ body {
     width: 100%;
   }
 
-  .lgn-inputs .item-button .col-lg-12 .main-button a {
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
     width: 70% !important;
   }
 }
+
+@media (max-width: 700px) and (min-width: 577px) and (min-height: 750px) and (max-height: 950px) {
+  body .login-page-content {
+    margin-top: 24vh;
+    background-color: #27292a;
+    padding: 60px;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 70vh; */
+    padding: 5vh 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+  .lgn-inputs .item-button .col-lg-12 .main-button input {
+    width: 35vh !important;
+    background-color: #F0B12F;
+    border: solid;
+    border-style: groove;
+    border-color: #A76F1C;
+    color: #1e1e1e;
+  }
+}
+
 
 /* 
 ----------------------------------------------------------------------------------------------------------
@@ -4101,7 +4127,7 @@ My Customization
   width: 100%;
 }
 
-.lgn-inputs .item-button .col-lg-12 .main-button a {
+.lgn-inputs .item-button .col-lg-12 .main-button input {
   width: 45%;
   background-color: #F0B12F;
   border: solid;

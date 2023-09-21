@@ -6,7 +6,7 @@ document.getElementById("language").addEventListener("change", function () {
         var inputs = document.querySelectorAll('input');
 
         for (let index = 0; index < inputs.length; index++) {
-            if (inputs[index].type == "text" || inputs[index].type == "password") {
+            if (inputs[index].type == "text" || inputs[index].type == "password" || inputs[index].type == "button") {
 
                 var elementName = inputs[index].name
 
@@ -30,13 +30,21 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
                         document.getElementById("password").placeholder = "Şifre";
+                    } else if (elementName == "companyIdNumber") {
+                        document.getElementById("id-number").placeholder = "Şirket ID";
+                    } else if (elementName == "submitButton") {
+                        document.getElementById("submit-button").value = "Giriş Yap";
                     }
 
                     if (document.getElementsByClassName("showPasswordLabel").length > 0) {
                         document.getElementById("showPasswordLabel").innerText = "Şifreyi göster";
                     }
 
-                    document.getElementsByClassName("item-button")[0].getElementsByTagName('a')[0].innerText = "Giriş Yap"
+                    if (document.getElementById("download-button") !== null) {
+                        document.getElementById("download-button").value = "Raporu İndir";
+                    }
+
+                    document.getElementById("dropdown-language-label").innerText = "Dil Seçeneği:";
 
                 } else if (selectedLanguage === "en") {
 
@@ -58,13 +66,21 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
                         document.getElementById("password").placeholder = "Password";
+                    } else if (elementName == "companyIdNumber") {
+                        document.getElementById("id-number").placeholder = "Company ID";
+                    } else if (elementName == "submitButton") {
+                        document.getElementById("submit-button").value = "Log in";
                     }
 
                     if (document.getElementsByClassName("showPasswordLabel").length > 0) {
-                        document.getElementById("showPasswordLabel").innerText = "Show Password";
+                        document.getElementById("showPasswordLabel").innerText = "Show password";
                     }
 
-                    document.getElementsByClassName("item-button")[0].getElementsByTagName('a')[0].innerText = "Log in"
+                    if (document.getElementById("download-button") !== null) {
+                        document.getElementById("download-button").value = "Download Report";
+                    }
+
+                    document.getElementById("dropdown-language-label").innerText = "Language Option:";
                 }
 
             }
