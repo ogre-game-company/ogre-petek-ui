@@ -30,8 +30,8 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
                         document.getElementById("password").placeholder = "Şifre";
-                    } else if (elementName == "companyIdNumber") {
-                        document.getElementById("id-number").placeholder = "Şirket ID";
+                    } else if (elementName == "senderIdNumber") {
+                        document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "submitButton") {
                         document.getElementById("submit-button").value = "Giriş Yap";
                     }
@@ -66,8 +66,8 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
                         document.getElementById("password").placeholder = "Password";
-                    } else if (elementName == "companyIdNumber") {
-                        document.getElementById("id-number").placeholder = "Company ID";
+                    } else if (elementName == "senderIdNumber") {
+                        document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "submitButton") {
                         document.getElementById("submit-button").value = "Log in";
                     }

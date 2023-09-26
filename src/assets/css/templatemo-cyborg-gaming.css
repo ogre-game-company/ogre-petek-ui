@@ -4206,10 +4206,6 @@ My Customization
   border: transparent;
 }
 
-
-/* Mobil görünüm için media query */
-
-
 body {
   background-image: url('../images/page-index/background-image.png');
   background-size: 1920px 1080px;
