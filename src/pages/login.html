@@ -17,7 +17,7 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="../assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/owl.css">
     <link rel="stylesheet" href="../assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -96,12 +96,14 @@
                                             name="registrationNumber" />
                                     </div>
                                     <div class="item-text">
-                                        <input type="text" placeholder="Şube" id='branch' name="branch" />
+                                        <select id="branch-dropdown" name="branch">
+                                            <option value="none" selected disabled hidden>Şube Seçiniz</option>
+                                        </select>
                                     </div>
                                     <div class="item-button">
                                         <div class="col-lg-12">
                                             <div class="main-button">
-                                                <input name="submitButton" type="button" id="open-game"
+                                                <input name="gameButton" type="button" id="open-game"
                                                     href="pages/profile.html" value="Giriş Yap"></input>
                                             </div>
                                         </div>
@@ -138,8 +140,12 @@
     <script src="../assets/js/tabs.js"></script>
     <script src="../assets/js/popup.js"></script>
     <script src="../assets/js/custom.js"></script>
-    <script src="../assets/js/validations/login-InputTextValidation.js"></script>
     <script src="../assets/js/helpers/languageSelector.js"></script>
+    <script type="module" src="../assets/js/fetch/base/env.js"></script>
+    <script type="module" src="../assets/js/validations/loginValidation.js"></script>
+    <script type="module" src="../assets/js/fetch/base/config.js"></script>
+    <script type="module" src="../assets/js/fetch/loginFetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 </body>
 
 </html>

@@ -24,8 +24,6 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("phone-number").placeholder = "Telefon Numarası";
                     } else if (elementName == "registrationNumber") {
                         document.getElementById("registration-number").placeholder = "Kayıt Numarası";
-                    } else if (elementName == "branch") {
-                        document.getElementById("branch").placeholder = "Şube";
                     } else if (elementName == "idNumber") {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
@@ -44,6 +42,14 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("download-button").value = "Raporu İndir";
                     }
 
+                    if (document.getElementById("open-game") != null) {
+                        document.getElementById("open-game").value = "Giriş Yap";
+                    }
+
+                    if (document.getElementById("branch-dropdown") != null) {
+                        document.getElementById("branch-dropdown").options[0].text = "Şube Seçiniz";
+                    }
+
                     document.getElementById("dropdown-language-label").innerText = "Dil Seçeneği:";
 
                 } else if (selectedLanguage === "en") {
@@ -60,8 +66,6 @@ document.getElementById("language").addEventListener("change", function () {
                         document.getElementById("phone-number").placeholder = "Phone Number";
                     } else if (elementName == "registrationNumber") {
                         document.getElementById("registration-number").placeholder = "Registration Number";
-                    } else if (elementName == "branch") {
-                        document.getElementById("branch").placeholder = "Branch";
                     } else if (elementName == "idNumber") {
                         document.getElementById("id-number").placeholder = "ID";
                     } else if (elementName == "password") {
@@ -78,6 +82,14 @@ document.getElementById("language").addEventListener("change", function () {
 
                     if (document.getElementById("download-button") !== null) {
                         document.getElementById("download-button").value = "Download Report";
+                    }
+
+                    if (document.getElementById("open-game") !== null) {
+                        document.getElementById("open-game").value = "Log in";
+                    }
+
+                    if (document.getElementById("branch-dropdown") != null) {
+                        document.getElementById("branch-dropdown").options[0].text = "Select Branch";
                     }
 
                     document.getElementById("dropdown-language-label").innerText = "Language Option:";
