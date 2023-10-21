@@ -1,5 +1,5 @@
 const CONFIGS = {
-    Secret_Key: 'www.ogre-petek.com',
+    Secret_Key: 'www.ogrepetek.com',
     Ogre_Petek_Demo_Game: 'ff0c0774-53cb-46e4-9fa3-d10b18d5a6b0'
 };
 

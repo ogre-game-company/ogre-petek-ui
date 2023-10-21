@@ -1,5 +1,5 @@
 const ENV = {
-    API_URL: 'http://localhost:5001/api/',
+    API_URL: 'http://test.petekegitim.xyz/api/',
 };
 
 export default ENV;

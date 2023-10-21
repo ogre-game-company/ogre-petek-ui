@@ -128,6 +128,8 @@ function redirectToGamePage(userId) {
         window.location.href = urlOrigin + "ogre-petek-ui-test/src/" + "games/index.html" + param;
     } else if (urlOrigin === "http://127.0.0.1:5500") {
         window.location.href = "http://127.0.0.1:5500/src/games/index.html" + param;
+    } else if (urlOrigin === "http://test.petekegitim.xyz") {
+        window.location.href = "http://test.petekegitim.xyz/src/games/index.html" + param;
     }
 }
 
@@ -135,7 +137,7 @@ function redirectToGamePage(userId) {
 function setEncryptedUserIdToCookie(userId) {
     const secretKey = CONFIGS.Secret_Key; // Güçlü bir anahtar seçin
     const encryptedUserId = encryptUserId(userId, secretKey);
-    setCookie('sessionId', encryptedUserId, 5); // 30 dakika süresince geçerli çerez oluşturma
+    setCookie('sessionId', encryptedUserId, 3); // 30 dakika süresince geçerli çerez oluşturma
 }
 
 function encryptUserId(userId, secretKey) {
@@ -145,7 +147,7 @@ function encryptUserId(userId, secretKey) {
 
 function setCookie(name, value, time) {
     const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + time);
+    expires.setHours(expires.getMinutes() + time);
     const encodedValue = encodeURIComponent(value);
     const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;
     document.cookie = cookieValue;

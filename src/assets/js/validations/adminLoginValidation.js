@@ -96,8 +96,8 @@ function uuidv4() {
 
 function setCookie(name, value, time) {
     const expires = new Date();
-    // expires.setDate(expires.getDate() + days);
-    expires.setMinutes(expires.getMinutes() + time);
+    expires.setDate(expires.getDate() + time);
+    // expires.setMinutes(expires.getMinutes() + time);
     const encodedValue = encodeURIComponent(value);
     const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;
     document.cookie = cookieValue;
@@ -133,7 +133,7 @@ function getCookie(name) {
 function setEncryptedUserIdToCookie(userId) {
     const secretKey = CONFIGS.Secret_Key; // Güçlü bir anahtar seçin
     const encryptedUserId = encryptUserId(userId, secretKey);
-    setCookie('sessionId', encryptedUserId, 5); // 30 dakika süresince geçerli çerez oluşturma
+    setCookie('sessionId', encryptedUserId, 30); // 30 dakika süresince geçerli çerez oluşturma
 }
 
 function encryptUserId(userId, secretKey) {

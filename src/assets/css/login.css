@@ -1,0 +1,232 @@
+@media (max-width: 450px) and (min-width: 350px) and (min-height: 750px) and (max-height: 950px) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 90%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 780px) and (min-height: 290px) and (max-height: 500px) and (orientation: landscape) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 700px) and (min-height: 950px) and (max-height: 1100px) and (orientation: portrait) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 950px) and (min-height: 700px) and (max-height: 900px) and (orientation: landscape) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 780px) and (min-height: 1000px) and (max-height: 1300px) and (orientation: portrait) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 950px) and (min-height: 720px) and (max-height: 820px) and (orientation: landscape) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+@media (max-width: 1190px) and (min-width: 1025px) and (min-height: 750px) and (max-height: 850px) and (orientation: landscape) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 100%;
+        font-family: inherit;
+    }
+}
+
+
+@media (max-width: 1000px) and (min-width: 650px) and (min-height: 600px) and (max-height: 850px) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
+
+
+/* @media (max-width: 500px) and (min-width: 300px) and (min-height: 650px) and (max-height: 950px) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 90% !important;
+        font-family: inherit;
+    }
+} */
+
+
+@media (max-width: 1000px) and (min-width: 800px) and (min-height: 700px) and (max-height: 1000px) {
+    .lgn-inputs .item-text #branch-dropdown {
+        background-color: #F0B12F;
+        border-color: #A76F1C;
+        font-family: 'Segoe UI';
+        font-size: 14px;
+        font-style: normal;
+        text-transform: capitalize;
+        color: #A76F1C;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        border: transparent;
+        padding: 10px 10px;
+        border-radius: 23px;
+        letter-spacing: 0.5px;
+        border: solid;
+        width: 80%;
+        font-family: inherit;
+    }
+}
