@@ -128,8 +128,8 @@ function redirectToGamePage(userId) {
         window.location.href = urlOrigin + "ogre-petek-ui-test/src/" + "games/index.html" + param;
     } else if (urlOrigin === "http://127.0.0.1:5500") {
         window.location.href = "http://127.0.0.1:5500/src/games/index.html" + param;
-    } else if (urlOrigin === "http://test.petekegitim.xyz") {
-        window.location.href = "http://test.petekegitim.xyz/src/games/index.html" + param;
+    } else if (urlOrigin === "http://petekegitim.xyz") {
+        window.location.href = "http://petekegitim.xyz/src/games/index.html" + param;
     }
 }
 
