@@ -96,7 +96,7 @@ function uuidv4() {
 
 function setCookie(name, value, time) {
     const expires = new Date();
-    expires.setDate(expires.getDate() + time);
+    expires.setSeconds(expires.getSeconds() + time);
     // expires.setMinutes(expires.getMinutes() + time);
     const encodedValue = encodeURIComponent(value);
     const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;

@@ -137,7 +137,7 @@ function redirectToGamePage(userId) {
 function setEncryptedUserIdToCookie(userId) {
     const secretKey = CONFIGS.Secret_Key; // Güçlü bir anahtar seçin
     const encryptedUserId = encryptUserId(userId, secretKey);
-    setCookie('sessionId', encryptedUserId, 3); // 30 dakika süresince geçerli çerez oluşturma
+    setCookie('sessionId', encryptedUserId, 30); // 30 saniye süresince geçerli çerez oluşturma
 }
 
 function encryptUserId(userId, secretKey) {
@@ -147,7 +147,7 @@ function encryptUserId(userId, secretKey) {
 
 function setCookie(name, value, time) {
     const expires = new Date();
-    expires.setHours(expires.getMinutes() + time);
+    expires.setSeconds(expires.getSeconds() + time);
     const encodedValue = encodeURIComponent(value);
     const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;
     document.cookie = cookieValue;
