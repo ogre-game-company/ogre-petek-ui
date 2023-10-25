@@ -131,7 +131,7 @@ function redirectToGamePage(userId) {
     } else if (urlOrigin === "http://petekegitim.xyz") {
         window.location.href = "http://petekegitim.xyz/src/games/index.html" + param;
     } else if (urlOrigin === "https://ogre-game-company.github.io") {
-        window.location.href = urlOrigin + "ogre-petek-ui/src/" + "games/index.html" + param;
+        window.location.href = urlOrigin + "/ogre-petek-ui/src/" + "games/index.html" + param;
     }
 }
 
