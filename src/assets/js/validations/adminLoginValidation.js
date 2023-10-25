@@ -32,10 +32,12 @@ if (document.getElementById("submit-button") !== null) {
             if (idCheck(value)) {
                 let statusCode = await adminLogin();
                 console.log(`StatusCode alındı:`, statusCode);
-                if (statusCode === "OK") {
+                if (statusCode === 200) {
 
                     setEncryptedUserIdToCookie(value)
                     redirectToPage(value);
+                } else {
+                    alert("Giriş Doğrulanamadı!");
                 }
             } else {
                 alert("Hata! Girmiş olduğunuz ID formatı hatalıdır.");
@@ -96,7 +98,7 @@ function uuidv4() {
 
 function setCookie(name, value, time) {
     const expires = new Date();
-    expires.setSeconds(expires.getSeconds() + time);
+    expires.setMinutes(expires.getMinutes() + time);
     // expires.setMinutes(expires.getMinutes() + time);
     const encodedValue = encodeURIComponent(value);
     const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;
@@ -133,7 +135,7 @@ function getCookie(name) {
 function setEncryptedUserIdToCookie(userId) {
     const secretKey = CONFIGS.Secret_Key; // Güçlü bir anahtar seçin
     const encryptedUserId = encryptUserId(userId, secretKey);
-    setCookie('sessionId', encryptedUserId, 30); // 30 dakika süresince geçerli çerez oluşturma
+    setCookie('sessionId', encryptedUserId, 10); // 10 dakika süresince geçerli çerez oluşturma
 }
 
 function encryptUserId(userId, secretKey) {

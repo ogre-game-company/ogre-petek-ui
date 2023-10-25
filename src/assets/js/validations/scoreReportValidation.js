@@ -1,6 +1,7 @@
 export { };
 
 import ENV from '../fetch/base/env.js';
+import CONFIGS from '../fetch/base/config.js';
 
 if (document.getElementById("download-button") !== null) {
     document.getElementById("download-button").addEventListener("click", function () {
@@ -32,8 +33,9 @@ if (document.getElementById("download-button") !== null) {
             var value = inputText.value;
 
             if (idCheck(value)) {
+                verifySession();
                 // excel dosyası indirilebilir.
-                fetchExcel(value);
+                // fetchExcel(value);
             } else {
                 // Hata
                 alert("Hata! Girmiş olduğunuz ID formatı hatalıdır.");
@@ -94,17 +96,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const params = new URLSearchParams(window.location.search);
     const senderId = params.get('senderIdNumber');
+    const inputField = document.getElementById('id-number');
 
     if (senderId != null && senderId !== null && senderId != "null" && senderId !== undefined) {
-
-        const inputField = document.getElementById('id-number');
         if (inputField && senderId !== "") {
             inputField.value = senderId || '';
             inputField.disabled = true;
-            console.log("disable edildi");
-            console.log("disable edildi:", senderId);
-            console.log("disable edildi:", typeof (senderId));
+            setEncryptedUserIdToCookie(senderId);
+            var origin = window.location.href;
+            origin = origin.replace("?" + params, "");
+            window.location.href = origin;
         }
-
+    } else {
+        const encryptedUserId = getCookie('sessionId');
+        if (encryptedUserId) {
+            const secretKey = CONFIGS.Secret_Key; // Aynı anahtarı kullanarak şifrelemeyi çöz
+            const decryptedUserId = decryptUserId(encryptedUserId, secretKey);
+            if (decryptedUserId) {
+                inputField.value = decryptedUserId || '';
+                inputField.disabled = true;
+            }
+        }
     }
 })
+
+
+function setCookie(name, value, time) {
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + time);
+    const encodedValue = encodeURIComponent(value);
+    const cookieValue = `${name}=${encodedValue}${time ? `; expires=${expires.toUTCString()}` : ''}`;
+    document.cookie = cookieValue;
+}
+
+function verifySession() {
+    const encryptedUserId = getCookie('sessionId');
+    if (encryptedUserId) {
+        const secretKey = CONFIGS.Secret_Key; // Aynı anahtarı kullanarak şifrelemeyi çöz
+        const decryptedUserId = decryptUserId(encryptedUserId, secretKey);
+        if (decryptedUserId) {
+            // Kullanıcı kimliği doğrulandı
+            fetchExcel(decryptedUserId);
+        } else {
+            // Geçersiz kimlik bilgisi
+            redirectToPage();
+        }
+    } else {
+        // Oturum çerezi yok
+        console.log('Oturum çerezi yok');
+        redirectToPage();
+    }
+}
+
+function redirectToPage() {
+    const urlOrigin = window.location.origin;
+    if (urlOrigin === "https://ogre-game-company.github.io") {
+        window.location.href = urlOrigin + "/ogre-petek-ui/src/" + "pages/admin-login.html";
+    } else if (urlOrigin === "http://petekegitim.xyz") {
+        window.location.href = "http://petekegitim.xyz/src/pages/admin-login.html";
+    } else if (urlOrigin === "https://petekegitim.xyz") {
+        window.location.href = "https://petekegitim.xyz/src/pages/admin-login.html";
+    } else if (urlOrigin === "http://127.0.0.1:5500") {
+        window.location.href = "http://127.0.0.1:5500/src/pages/admin-login.html";
+    } else if (urlOrigin === "https://127.0.0.1:5501") {
+        window.location.href = "https://127.0.0.1:5501/src/pages/admin-login.html";
+    }
+}
+
+function getCookie(name) {
+    const cookieName = `${name}=`;
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) === 0) {
+            return decodeURIComponent(cookie.substring(cookieName.length, cookie.length));
+        }
+    }
+    return null;
+}
+
+function decryptUserId(encryptedUserId, secretKey) {
+    try {
+        const bytes = CryptoJS.AES.decrypt(encryptedUserId, secretKey);
+        const originalUserId = bytes.toString(CryptoJS.enc.Utf8);
+        return originalUserId;
+    } catch (error) {
+        // Şifre çözme hatası
+        return null;
+    }
+}
+
+function setEncryptedUserIdToCookie(userId) {
+    const secretKey = CONFIGS.Secret_Key; // Güçlü bir anahtar seçin
+    const encryptedUserId = encryptUserId(userId, secretKey);
+    setCookie('sessionId', encryptedUserId, 10); // 3 dakika süresince geçerli çerez oluşturma
+}
+
+function encryptUserId(userId, secretKey) {
+    const encrypted = CryptoJS.AES.encrypt(userId, secretKey);
+    return encrypted.toString();
+}

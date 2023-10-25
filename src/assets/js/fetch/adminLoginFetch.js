@@ -16,5 +16,5 @@ export default async function adminLogin() {
         alert(data.message);
     }
 
-    return response.statusText;
+    return response.status;
 }
