@@ -1,105 +1,88 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | TicTacToeMCTS</title>
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-    <script src="TemplateData/UnityProgress.js"></script>
-  </head>
-  <body class="template">
-    <p class="header"><span>Unity WebGL Player | </span>TicTacToeMCTS</p>
-    <div class="template-wrap clear">
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="768px" width="1366px"></canvas>
-      <div class="logo"></div>
-      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
-      <div class="title">TicTacToeMCTS</div>
-    </div>
-    <p class="footer">&laquo; created with <a href="http://unity3d.com/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-    <script type='text/javascript'>
-  // connect to canvas
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    filePackagePrefixURL: "Release/",
-    memoryInitializerPrefixURL: "Release/",
-    preRun: [],
-    postRun: [],
-    print: (function() {
-      return function(text) {
-        console.log (text);
-      };
-    })(),
-    printErr: function(text) {
-      console.error (text);
-    },
-    canvas: document.getElementById('canvas'),
-    progress: null,
-    setStatus: function(text) {
-      if (this.progress == null) 
-      {
-        if (typeof UnityProgress != 'function')
-          return;
-        this.progress = new UnityProgress (canvas);
-      }
-      if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
-      if (text === Module.setStatus.text) return;
-      this.progress.SetMessage (text);
-      var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
-      if (m)
-        this.progress.SetProgress (parseInt(m[2])/parseInt(m[4]));
-      if (text === "") 
-        this.progress.Clear()
-    },
-    totalDependencies: 0,
-    monitorRunDependencies: function(left) {
-      this.totalDependencies = Math.max(this.totalDependencies, left);
-      Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
-    }
-  };
-  Module.setStatus('Downloading (0.0/1)');
-</script>
-<script src="Release/UnityConfig.js"></script>
-<script src="Release/fileloader.js"></script>
-<script>if (!(!Math.fround)) {
-  var script = document.createElement('script');
-  script.src = "Release/ttt-mcts.js";
-  document.body.appendChild(script);
-} else {
-  var codeXHR = new XMLHttpRequest();
-  codeXHR.open('GET', 'Release/ttt-mcts.js', true);
-  codeXHR.onload = function() {
-    var code = codeXHR.responseText;
-    if (!Math.fround) { 
-try {
-  console.log('optimizing out Math.fround calls');
-  var m = /var ([^=]+)=global\.Math\.fround;/.exec(code);
-  var minified = m[1];
-  if (!minified) throw 'fail';
-  var startAsm = code.indexOf('// EMSCRIPTEN_START_FUNCS');
-  var endAsm = code.indexOf('// EMSCRIPTEN_END_FUNCS');
-  var asm = code.substring(startAsm, endAsm);
-  do {
-    var moar = false; // we need to re-do, as x(x( will not be fixed
-    asm = asm.replace(new RegExp('[^a-zA-Z0-9\\$\\_]' + minified + '\\(', 'g'), function(s) { moar = true; return s[0] + '(' });
-  } while (moar);
-  code = code.substring(0, startAsm) + asm + code.substring(endAsm);
-  code = code.replace("'use asm'", "'almost asm'");
-} catch(e) { console.log('failed to optimize out Math.fround calls ' + e) }
- }
+<!DOCTYPE html>
+<html>
+    <!--
+    * @author Niklas von Hertzen <niklas at hertzen.com>
+    * @created 30.12.2011 
+    * @website http://hertzen.com
+    -->
+    <head>
+        <title>GTA in WebGL</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    var blob = new Blob([code], { type: 'text/javascript' });
-    codeXHR = null;
-    var src = URL.createObjectURL(blob);
-    var script = document.createElement('script');
-    script.src = URL.createObjectURL(blob);
-    script.onload = function() {
-      URL.revokeObjectURL(script.src);
-    };
-    document.body.appendChild(script);
-  };
-  codeXHR.send(null);
-}
-</script>
-  </body>
+        <script src="external/ThreeDebug.js"></script>
+        <script src="external/Stats.js"></script>
+        <script src="external/Box2dWeb-2.1.a.3.js"></script>
+        <script src="external/raw-loader.js"></script>
+        
+        <script src="external/DataView.js"></script>
+
+        <script src="js/reader.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/debug.js"></script>
+        <script src="js/physics.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/worker.js"></script>
+        <script src="js/filesystem.js"></script>
+        <script src="js/loader.js"></script>
+        <script src="js/block.js"></script>
+        <script src="js/car.js"></script>
+        <script src="js/sprites.js"></script>
+        <script src="js/gameobject.js"></script>
+        <script src="js/person.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/missions.js"></script>
+        <script src="js/missioncommands.js"></script>
+        <script src="js/missionactions.js"></script>
+
+
+        <script>
+            function start(){
+                
+                var stats = new Stats();
+
+                // Align top-left
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0px';
+                stats.domElement.style.top = '0px';
+
+                document.body.appendChild( stats.domElement );
+
+                setInterval( function () {
+
+                    stats.update();
+
+                }, 1000 / 60 );
+                
+                
+                var game = new GTA.Game();
+            }
+            
+        </script>
+        <style>
+            body, html {
+                overflow:hidden;
+                margin:0;
+                padding:0;
+                background:#000;
+            }
+
+            #GTADebugPositionData {
+
+
+
+
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 200px;
+                height: 50px;
+                opacity: 0.5;
+                color: #fff;
+                background: #000;
+
+            }
+
+        </style>
+    </head>
+    <body onload="start();"></body>
 </html>
