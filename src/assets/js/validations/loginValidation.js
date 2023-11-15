@@ -209,6 +209,8 @@ function verifySession() {
         }
     } else {
         // Oturum çerezi yok
+        const urlOrigin2 = window.location.origin;
+        console.log('logOrigin: ', urlOrigin2);
         console.log('Oturum çerezi yok');
     }
 }
