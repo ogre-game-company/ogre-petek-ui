@@ -148,8 +148,8 @@ function redirectToGamePage(userId) {
         window.location.href = "https://127.0.0.1:5502/src/games/index.html" + param;
     } else if (urlOrigin === "http://127.0.0.1:5502") {
         window.location.href = "http://127.0.0.1:5502/src/games/index.html" + param;
-    } else if (urlOrigin === "http://petekegitim.xyz") {
-        window.location.href = "http://petekegitim.xyz/src/games/index.html" + param;
+    // } else if (urlOrigin === "http://petekegitim.xyz") {
+    //     window.location.href = "http://petekegitim.xyz/src/games/index.html" + param;
     } else if (urlOrigin === "https://petekegitim.xyz") {
         window.location.href = "https://petekegitim.xyz/src/games/index.html" + param;
     } else if (urlOrigin === "https://ogre-game-company.github.io") {
