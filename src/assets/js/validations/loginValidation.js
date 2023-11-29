@@ -156,6 +156,12 @@ function redirectToGamePage(userId) {
         window.location.href = urlOrigin + "/ogre-petek-ui/src/" + "games/index.html" + param;
     } else if (urlOrigin === "http://petekegitim.com.tr") {
         window.location.href = "http://petekegitim.com.tr/src/games/index.html" + param;
+    } else if (urlOrigin === "https://petekegitim.com.tr") {
+        window.location.href = "https://petekegitim.com.tr/src/games/index.html" + param;
+    } else if (urlOrigin === "https://sandoz.petekegitim.com.tr") {
+        window.location.href = "https://sandoz.petekegitim.com.tr/src/games/index.html" + param;
+    } else if (urlOrigin === "http://sandoz.petekegitim.com.tr") {
+        window.location.href = "http://sandoz.petekegitim.com.tr/src/games/index.html" + param;
     }
 }
 

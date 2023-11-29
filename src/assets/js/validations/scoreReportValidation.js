@@ -160,6 +160,14 @@ function redirectToPage() {
         window.location.href = "http://127.0.0.1:5500/src/pages/admin-login.html";
     } else if (urlOrigin === "https://127.0.0.1:5501") {
         window.location.href = "https://127.0.0.1:5501/src/pages/admin-login.html";
+    } else if (urlOrigin === "https://petekegitim.com.tr") {
+        window.location.href = "https://petekegitim.com.tr/src/pages/admin-login.html";
+    } else if (urlOrigin === "http://petekegitim.com.tr") {
+        window.location.href = "http://petekegitim.com.tr/src/pages/admin-login.html";
+    } else if (urlOrigin === "https://sandoz.petekegitim.com.tr") {
+        window.location.href = "https://sandoz.petekegitim.com.tr/src/pages/admin-login.html";
+    } else if (urlOrigin === "http://sandoz.petekegitim.com.tr") {
+        window.location.href = "http://sandoz.petekegitim.com.tr/src/pages/admin-login.html";
     }
 }
 
