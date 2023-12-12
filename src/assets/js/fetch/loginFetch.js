@@ -48,7 +48,7 @@ export default async function login() {
     var data = await response.json();
 
     if (response.status == 200) {
-        alert("Kayıt başarılı... Oyuna giriş yapabilirsiniz.");
+        // alert("Kayıt başarılı... Oyuna giriş yapabilirsiniz.");
         return data.data.id;
     } else {
         alert(data.message);

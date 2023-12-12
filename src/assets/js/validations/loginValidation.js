@@ -4,6 +4,8 @@ import CONFIGS from '../fetch/base/config.js';
 import login from '../fetch/loginFetch.js';
 import ENV from '../fetch/base/env.js';
 
+var baseUserId = "";
+
 if (document.getElementById("open-game") !== null) {
     document.getElementById("open-game").addEventListener("click", async function () {
         const inputTextList = document.getElementsByTagName("input")
@@ -57,7 +59,9 @@ if (document.getElementById("open-game") !== null) {
             if (responseValue !== "Error") {
                 console.log("User Id:", responseValue);
                 setEncryptedUserIdToCookie(responseValue)
-                redirectToGamePage(responseValue);
+                baseUserId = responseValue;
+                playVideo();
+                // redirectToGamePage(responseValue);
             }
         }
     });
@@ -208,7 +212,9 @@ function verifySession() {
         if (decryptedUserId) {
             // Kullanıcı kimliği doğrulandı
             // console.log(`Kullanıcı kimliği: ${decryptedUserId}`);
-            redirectToGamePage(decryptedUserId);
+            // redirectToGamePage(decryptedUserId);
+            baseUserId = decryptedUserId;
+            playVideo();
         } else {
             // Geçersiz kimlik bilgisi
             console.log('Geçersiz kimlik bilgisi');
@@ -231,4 +237,33 @@ function decryptUserId(encryptedUserId, secretKey) {
         // Şifre çözme hatası
         return null;
     }
+}
+
+
+var videoContainer = document.getElementById("video-container");
+var video = document.getElementById("video");
+
+function playVideo() {
+
+    video.play()
+        .then(() => {
+            console.log("Video başlatıldı");
+            videoContainer.style.visibility = "visible";
+            videoContainer.style.position = "relative";
+            videoContainer.style.display = 'flex';
+            // videoContainer.style.zIndex = 1000;
+            // videoContainer.style.width = '100%';
+            // videoContainer.style.height = '100%';
+
+            document.body.style.overflow = "hidden";
+        })
+        .catch(error => console.error("Video başlatma hatası:", error));
+    video.requestFullscreen();
+}
+
+
+video.addEventListener('ended', videoEnded);
+
+function videoEnded() {
+    redirectToGamePage(baseUserId);
 }
