@@ -47,7 +47,7 @@ document.getElementById("language").addEventListener("change", function () {
                     }
 
                     if (document.getElementById("branch-dropdown") != null) {
-                        document.getElementById("branch-dropdown").options[0].text = "Şube Seçiniz";
+                        document.getElementById("branch-dropdown").options[0].text = "Bölüm Seçiniz";
                     }
 
                     document.getElementById("dropdown-language-label").innerText = "Dil Seçeneği:";
