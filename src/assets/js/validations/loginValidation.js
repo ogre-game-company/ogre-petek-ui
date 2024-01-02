@@ -24,33 +24,6 @@ if (document.getElementById("open-game") !== null) {
             }
         }
 
-        // for (let index = 0; index < inputTextList.length; index++) {
-        //     const element = inputTextList[index];
-        //     if (element.type == "text") {
-        //         isCheck = true;
-        //         if (element.value == "") {
-        //             isCheck = false;
-        //         }
-
-        //         if (document.getElementById("branch-dropdown") !== null && document.getElementById("branch-dropdown").value == "none") {
-        //             isCheck = false;
-        //         }
-        //     }
-        // }
-
-        // for (let index = 0; index < inputTextList.length; index++) {
-        //     const element = inputTextList[index];
-        //     if (element.type == "text") {
-        //         if (element.value == "") {
-        //             isCheck = false;
-        //         }
-
-        //         if (document.getElementById("branch-dropdown") !== null && document.getElementById("branch-dropdown").value == "none") {
-        //             isCheck = false;
-        //         }
-        //     }
-        // }
-
         if (isCheck === false) {
             alert("Lütfen gerekli alanları doldurunuz!");
         } else {
@@ -243,21 +216,34 @@ function decryptUserId(encryptedUserId, secretKey) {
 var videoContainer = document.getElementById("video-container");
 var video = document.getElementById("video");
 
+
 function playVideo() {
 
-    video.play()
-        .then(() => {
-            console.log("Video başlatıldı");
-            videoContainer.style.visibility = "visible";
-            videoContainer.style.position = "relative";
-            videoContainer.style.display = 'flex';
-            // videoContainer.style.zIndex = 1000;
-            // videoContainer.style.width = '100%';
-            // videoContainer.style.height = '100%';
+    var videoConfig = video.getElementsByTagName("source")[0];
 
-            document.body.style.overflow = "hidden";
-        })
-        .catch(error => console.error("Video başlatma hatası:", error));
+    if (document.documentElement.lang === "en") {
+        videoConfig.src = "./intro-en.mp4"
+    }
+    else {
+        videoConfig.src = "./intro.mp4"
+    }
+
+    video.load();
+    video.addEventListener('loadedmetadata', function () {
+        video.play()
+            .then(() => {
+                console.log("Video başlatıldı");
+                videoContainer.style.visibility = "visible";
+                videoContainer.style.position = "relative";
+                videoContainer.style.display = 'flex';
+                // videoContainer.style.zIndex = 1000;
+                // videoContainer.style.width = '100%';
+                // videoContainer.style.height = '100%';
+
+                document.body.style.overflow = "hidden";
+            })
+            .catch(error => console.error("Video başlatma hatası:", error));
+    });
     video.requestFullscreen();
 }
 
